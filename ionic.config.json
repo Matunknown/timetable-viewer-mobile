@@ -1,5 +1,7 @@
 {
   "name": "timetable-viewer-mobile",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

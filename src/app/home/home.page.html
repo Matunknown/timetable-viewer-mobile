@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Timetable Viewer
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,29 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Timetable Viewer</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-button (click)="btnBack()">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+  </ion-button>
+  <ion-button (click)="btnForward()">
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </ion-button>
+  <ion-button (click)="btnToday()">
+    <ion-icon name="today-outline" slot="end"></ion-icon>
+    Aujourd'hui
+  </ion-button>
+  <ion-button color="tertiary" (click)="showPicker()">
+    Groupe
+  </ion-button>
+
+  <ion-slides [options]="sliderOpt" zoom>
+    <ion-slide>
+      <div class="swiper-zoom-container">
+         <img src="https://edt.univ-evry.fr/vue_etudiant_horizontale.php?current_year={{year}}&current_student={{code}}&current_week={{weekNumber}}&lar=800&hau=1920" />
+      </div>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
