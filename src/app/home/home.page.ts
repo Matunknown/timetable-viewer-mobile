@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PickerController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 @Component({
   selector: 'app-home',
@@ -13,19 +14,22 @@ export class HomePage {
   weekNumber = this.getWeekNumber();
   year = (new Date().getMonth() === 0 && this.weekNumber >= 52) ? new Date().getFullYear() - 1 : new Date().getFullYear();
 
+  width = 800;
+  height = 1920;
+
   sliderOpt = {
     zoom: {
       maxRatio: 2
     }
   };
 
-  constructor(private pickerController: PickerController, private storage: Storage) {
+  constructor(private pickerController: PickerController, private storage: Storage, private screenOrientation: ScreenOrientation) {
     this.getCodeData();
+    this.getScreenOrientation();
   }
 
   getCodeData() {
     this.storage.get('code').then((val) => {
-      console.log('Code is', val);
       this.code = val;
     });
   }
@@ -99,6 +103,20 @@ export class HomePage {
       this.code = col.options[col.selectedIndex].value;
       this.storage.set('code', this.code);
     });
+  }
+
+  getScreenOrientation() {
+    this.screenOrientation.onChange().subscribe(
+      () => {
+        if (this.screenOrientation.type === 'landscape-primary' || this.screenOrientation.type === 'landscape-secondary') {
+          this.width = 1920;
+          this.height = 1080;
+        } else {
+          this.width = 800;
+          this.height = 1920;
+        }
+      }
+    );
   }
 
 }

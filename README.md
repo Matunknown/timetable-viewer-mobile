@@ -12,6 +12,8 @@
 
 ## About The Project
 
+[![Screen Shot][screenshot]](https://raw.githubusercontent.com/Matunknown/timetable-viewer-mobile/master/resources/screenshot.png)
+
 An application to consult his timetable for computer science students at the University of Evry.
 
 ### Built With
@@ -57,3 +59,5 @@ An application to consult his timetable for computer science students at the Uni
 ## License
 
 Distributed under the MIT License.
+
+[screenshot]: resources/screenshot.png
