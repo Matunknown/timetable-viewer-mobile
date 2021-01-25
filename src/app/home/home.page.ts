@@ -44,10 +44,15 @@ export class HomePage {
   
   btnToday() {
     this.weekNumber = this.getWeekNumber();
+    this.year = (new Date().getMonth() === 0 && this.weekNumber >= 52) ? new Date().getFullYear() - 1 : new Date().getFullYear();
   }
 
-  btnBack() {
+  btnBackward() {
     this.weekNumber --;
+    if (this.weekNumber <= 0) {
+      this.year--;
+      this.weekNumber = 52;
+    }
   }
 
   btnForward() {
