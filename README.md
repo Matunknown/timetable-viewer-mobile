@@ -1,3 +1,7 @@
+[![Download][download-shield]][download-url]
+[![Release][release-shield]][release-url]
+[![MIT License][license-shield]][license-url]
+
 <br />
 <p align="center">
   <img src="resources/icon.png" alt="Logo" width="80" height="80">
@@ -19,6 +23,7 @@ An application to consult his timetable for computer science students at the Uni
 ### Built With
 
 * [Ionic](https://ionicframework.com/)
+* [Angular](https://angularjs.org/)
 
 ## Getting Started
 
@@ -60,4 +65,10 @@ An application to consult his timetable for computer science students at the Uni
 
 Distributed under the MIT License.
 
+[download-shield]: https://img.shields.io/github/downloads/Matunknown/timetable-viewer-mobile/total?style=for-the-badge&color=brightgreen
+[download-url]: https://github.com/Matunknown/timetable-viewer-mobile/releases
+[release-shield]: https://img.shields.io/github/v/release/Matunknown/timetable-viewer-mobile?style=for-the-badge
+[release-url]: https://github.com/Matunknown/timetable-viewer-mobile/releases
+[license-shield]: https://img.shields.io/github/license/Matunknown/timetable-viewer-mobile?style=for-the-badge
+[license-url]: https://github.com/Matunknown/timetable-viewer-mobile/blob/master/LICENSE
 [screenshot]: resources/screenshot.png
